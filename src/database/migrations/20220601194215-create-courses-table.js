@@ -20,7 +20,7 @@ module.exports = {
       thumbnail_url: {
         type: Sequelize.DataTypes.STRING
       },
-      featured: {
+      feature: {
         defaultValue: false,
         type: Sequelize.DataTypes.BOOLEAN
       },

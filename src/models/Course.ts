@@ -6,11 +6,11 @@ export interface CourseAttributes {
    name: string
    synopsis: string
    thumbnailUrl: string
-   featured: boolean
+   feature: boolean
    categoryId: number
 }
 
-export interface CourseCreationAttributes extends Optional<CourseAttributes, 'id' | 'thumbnailUrl' | 'featured' > {}
+export interface CourseCreationAttributes extends Optional<CourseAttributes, 'id' | 'thumbnailUrl' | 'feature' > {}
 
 export interface CourseInstance extends Model<CourseAttributes, CourseCreationAttributes>, CourseAttributes{}
 
@@ -32,7 +32,7 @@ export const Course = sequelize.define<CourseInstance, CourseAttributes>('course
     thumbnailUrl: {
       type: DataTypes.STRING
     },
-    featured: {
+    feature: {
       defaultValue: false,
       type: DataTypes.BOOLEAN
     },
