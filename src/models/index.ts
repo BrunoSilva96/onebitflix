@@ -12,5 +12,5 @@ Episode.belongsTo(Course);
 export {
    Course,
    Category,
-   Episode
+   Episode,
 }
