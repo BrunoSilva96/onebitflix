@@ -19,11 +19,11 @@ module.exports = {
       },
       created_at: {
         allowNull: false,
-        type: Sequelize.DataTypes.DATE,
+        type: Sequelize.DATE,
       },
       updated_at: {
         allowNull: false,
-        type: Sequelize.DataTypes.DATE
+        type: Sequelize.DATE
       }
     })
   },

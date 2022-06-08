@@ -2,47 +2,55 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('courses', {
+    await queryInterface.createTable('users', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.DataTypes.INTEGER
       },
-      name: {
+      first_name: {
         allowNull: false,
         type: Sequelize.DataTypes.STRING
       },
-      synopsis: {
+      last_name: {
         allowNull: false,
-        type: Sequelize.DataTypes.TEXT
-      },
-      thumbnail_url: {
         type: Sequelize.DataTypes.STRING
       },
-      featured: {
-        defaultValue: false,
-        type: Sequelize.DataTypes.BOOLEAN
-      },
-      category_id: {
+      phone: {
         allowNull: false,
-        type: Sequelize.DataTypes.INTEGER,
-        references: { model: 'categories', key: 'id'},
-        onUpdate: 'CASCADE',
-        onDelete: 'RESTRICT'
+        type: Sequelize.DataTypes.STRING
+      },
+      birth: {
+        allowNull: false,
+        type: Sequelize.DataTypes.DATE
+      },
+      email: {
+        allowNull: false,
+        unique: true,
+        type: Sequelize.DataTypes.STRING
+      },
+      password: {
+        allowNull: false,
+        type: Sequelize.DataTypes.STRING
+      },
+      role: {
+        allowNull: false,
+        type: Sequelize.DataTypes.STRING
       },
       created_at: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATE
       },
       updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }
-    })
+    });
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('courses');
+    await queryInterface.dropTable('users');
+
   }
 };

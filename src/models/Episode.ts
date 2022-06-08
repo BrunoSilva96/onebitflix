@@ -15,7 +15,7 @@ export interface EpisodeCreationAttributes extends Optional<EpisodeAttributes, '
 
 export interface EpisodeInstance extends Model<EpisodeAttributes, EpisodeCreationAttributes>, EpisodeAttributes {}
 
-export const Episode = sequelize.define<EpisodeInstance, EpisodeAttributes>('episodes', {
+export const Episode = sequelize.define<EpisodeInstance, EpisodeAttributes>('Episodes', {
    id: {
       allowNull: false,
       autoIncrement: true,
@@ -32,7 +32,6 @@ export const Episode = sequelize.define<EpisodeInstance, EpisodeAttributes>('epi
    },
    order: {
       allowNull: false,
-      unique: true,
       type: DataTypes.STRING
    },
    videoUrl: {
