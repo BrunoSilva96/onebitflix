@@ -12,6 +12,7 @@ export const episodesController = {
          const range = req.headers.range //FORMATO DO RANGE -> bytes=0-1024
 
          episodeService.streamEpisodeToResponse(res, videoUrl, range)
+         
       } catch (err) {
          if (err instanceof Error) {
             return res.status(400).json({ message: err.message })
