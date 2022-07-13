@@ -16,7 +16,7 @@ export const adminJs = new AdminJS({
    resources: adminJsResources,
    branding: brandingOptions,
    locale: locale,
-      dashboard: dashboardOptions
+   dashboard: dashboardOptions
 })
 
 export const adminJsRouter = AdminJSExpress.buildAuthenticatedRouter(
